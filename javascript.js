@@ -1,13 +1,17 @@
 var $ = document
 var display = $.getElementById('display')
 const removeSpaces = str => str.replace(/\s/g, '')
+const numButtons = document.querySelectorAll('.btn-num')
+numButtons.forEach(button => button.addEventListener('click', () => num(button.innerHTML)))
 var cMathSymbol = 0
 var cNegativeSymbol = 0
+
 function num(value) {
     display.value += value
     cMathSymbol = 0
     cNegativeSymbol = 0
 }
+
 function mathSymbol(value) {
     if (cMathSymbol < 1) {
         if (display.value != "") {
