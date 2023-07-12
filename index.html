@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,14 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="calculator">
         <p id="caption">calculator</p>
         <hr>
         <input id="display" disabled>
-        <hr style="height: 5px !important; width: 90% !important; margin-top: -40px !important; background-color: #e9782d;">
+        <hr
+            style="height: 5px !important; width: 90% !important; margin-top: -40px !important; background-color: #e9782d;">
         <div id="buttons-main">
             <button class="button btn-num">00</button>
             <button class="button btn-num">1</button>
@@ -28,19 +31,20 @@
             <button class="button btn-num">3</button>
             <button class="button btn-num">6</button>
             <button class="button btn-num">9</button>
-            <button class="button btn-num" onclick="negativeSymbol('-')">-/+</button>
-            <button class="btn-num button" >(</button>
-            <button class="button" onclick="mathSymbol(this.innerHTML)">+</button>
-            <button class="button" onclick="mathSymbol(this.innerHTML)">-<button>
-            <button class="button delete" onclick="deleteFunc()">Del</button>
-            <button class="button clear" onclick="clearFunc()">clear</button>
-            <button class="button btn-num"> ) </button>
-            <button class="button" onclick="mathSymbol(this.innerHTML)">*</button>
-            <button class="button" onclick="mathSymbol(this.innerHTML)">/</button>
-            <button class="button result" onclick="resultFunc()">=</button>
+            <button class="button math-sym">-/+</button>
+            <button class="btn-num button">(</button>
+            <button class="button math-sym">+</button>
+            <button class="button math-sym">-<button>
+                    <button class="button delete">Del</button>
+                    <button class="button clear">clear</button>
+                    <button class="button btn-num"> ) </button>
+                    <button class="button math-sym">*</button>
+                    <button class="button math-sym">/</button>
+                    <button class="button result">=</button>
 
         </div>
     </div>
     <script src="javascript.js"></script>
 </body>
+
 </html>

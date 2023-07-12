@@ -1,52 +1,47 @@
-var $ = document
-var display = $.getElementById('display')
+const display = document.getElementById('display')
 const removeSpaces = str => str.replace(/\s/g, '')
 const numButtons = document.querySelectorAll('.btn-num')
-numButtons.forEach(button => button.addEventListener('click', () => num(button.innerHTML)))
-var cMathSymbol = 0
-var cNegativeSymbol = 0
+const mathSymButtons = document.querySelectorAll('.math-sym')
+const resultButton = document.querySelector('.result')
+const clearButton = document.querySelector('.clear')
+const deleteButton = document.querySelector('.delete')
+let endMathSymbolFlag = false
+
+mathSymButtons.forEach(button => {
+    button.addEventListener('click', () => mathSymbol(button.innerHTML))
+})
+
+numButtons.forEach(button => {
+    button.addEventListener('click', () => num(button.innerHTML))
+})
+
+resultButton.addEventListener('click', result)
+clearButton.addEventListener('click', clear)
+deleteButton.addEventListener('click', deleteFunc)
 
 function num(value) {
     display.value += value
-    cMathSymbol = 0
-    cNegativeSymbol = 0
+    endMathSymbolFlag = false
 }
 
 function mathSymbol(value) {
-    if (cMathSymbol < 1) {
-        if (display.value != "") {
-            display.value += " " + value + " "
-        } else {
-            alert("Firt Enter A Number")
-        }
+    display.value += ` ${value} `
+    endMathSymbolFlag = true
+}
+
+function result() {
+    if (!display.value || endMathSymbolFlag) {
+        return
     }
-    cMathSymbol = cMathSymbol + 1
+    display.value = eval(display.value)
 }
-function negativeSymbol(value) {
-    if (cNegativeSymbol < 1) {
-        display.value += " " + value + " "
-    }
-    cNegativeSymbol = cNegativeSymbol + 1
+
+function clear() {
+    display.value = ''
 }
-function clearFunc() {
-    display.value = ""
-    cMathSymbol = 0
-    cNegativeSymbol = 0
-}
-function resultFunc() {
-    if (display.value == "") {
-        alert("Enter A Number")
-    } else {
-        display.value = eval(removeSpaces(display.value))
-    }
-    cMathSymbol = 0
-    cNegativeSymbol = 0
-}
+
 function deleteFunc() {
-    var sum = display.value
-    var sumLenght = sum.length
-    var cut = sum.substr(0, sumLenght - 1);
-    display.value = cut
-    cMathSymbol = 0
-    cNegativeSymbol = 0
+    const displayValue = display.value
+    const cutedValue = displayValue.substr(0, (displayValue.length - 1));
+    display.value = cutedValue
 }
