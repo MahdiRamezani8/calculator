@@ -1,0 +1,116 @@
+ * {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font-family: main;
+   font-size: 20px;
+ }
+
+ @font-face {
+   font-family: main;
+   src: url(comic.ttf);
+ }
+
+ body {
+   background-color: black;
+   color: #fff;
+ }
+
+ #calculator {
+   width: 500px;
+   height: 700px;
+   background: linear-gradient(to bottom, #2f2f35, rgb(15, 15, 15));
+   margin: 50px auto 0 auto;
+   border-radius: 30px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ #caption {
+   text-align: center;
+ }
+
+ hr {
+   border-radius: 100px;
+   height: 5px;
+   background-color: #f08000;
+   width: 70%;
+   margin: 6px auto;
+ }
+
+ #display {
+   width: 83%;
+   height: 70px;
+   margin: 60px 39px;
+   background-color: transparent;
+   font-size: 40px;
+   color: #fff;
+ }
+
+ #buttons-main {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   align-items: center;
+   width: 95%;
+   height: 460px;
+   margin: 10px auto;
+ }
+
+ .button {
+   width: 80px;
+   height: 80px;
+   border-radius: 100%;
+   background: linear-gradient(45deg, #292424, #585252);
+   font-size: 30px;
+   color: #ffffff;
+   margin: 6px 2.5px;
+   transition-duration: .05s;
+   cursor: pointer;
+ }
+
+ .btn-num {
+   background: linear-gradient(45deg, #585252, #767171);
+
+ }
+
+ .button:active {
+   transform: rotatex(20deg);
+   box-shadow: 2px 2px 10px #a7a7a7a4;
+ }
+
+ .clear {
+   background: #d13c1b9b;
+ }
+
+ .clear:active {
+   transform: rotatey(20deg);
+ }
+
+ .result {
+   background: linear-gradient(45deg, #0d3fe3, #006eff);
+   border-radius: 20px;
+   height: 170px;
+ }
+
+ .delete {
+   background: linear-gradient(45deg, #bd3939, #d30909);
+ }
+
+ .empty {
+   background: linear-gradient(45deg, #ffffff, #ffffff);
+ }
+
+ #main-container {
+    width: 100%;
+    height: 400px;
+    background-color: #0d3fe3;
+ }
+
+ #send{
+  width: 100px;
+  height: 50px;
+  background-color: #2f2f35;
+ }
